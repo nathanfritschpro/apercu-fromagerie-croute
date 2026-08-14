@@ -151,7 +151,15 @@ p.lead { font-family: var(--display); font-style: italic; font-weight: 300; font
   text-shadow: none;
   flex-shrink: 0;
 }
-.logo:hover .logo-mark { transform: rotate(-10deg) scale(1.08); }
+.logo-img {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform .5s var(--ease);
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+.logo:hover .logo-mark, .logo:hover .logo-img { transform: rotate(-8deg) scale(1.08); }
 .logo-text { display: flex; flex-direction: column; line-height: 1; }
 .logo-text .brand {
   font-family: var(--display);
@@ -298,45 +306,17 @@ p.lead { font-family: var(--display); font-style: italic; font-weight: 300; font
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(244, 201, 49, .15), transparent 50%),
-              radial-gradient(circle at 80% 70%, rgba(244, 201, 49, .08), transparent 50%),
-              var(--ink);
+  background-size: cover;
+  background-position: center;
+  background-color: var(--ink);
 }
-/* Grosses roues de fromage flottantes en fond */
-.wheel {
+.hero-overlay {
   position: absolute;
-  border-radius: 50%;
-  background: var(--yellow);
-  opacity: .9;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 12, 12, .55) 0%, rgba(12, 12, 12, .3) 40%, rgba(12, 12, 12, .8) 100%),
+    radial-gradient(circle at 15% 40%, rgba(244, 201, 49, .18), transparent 55%);
   z-index: 1;
-}
-.wheel-1 {
-  width: 380px; height: 380px;
-  right: -160px;
-  top: 8%;
-  background: radial-gradient(circle at 40% 40%, var(--yellow-soft), var(--yellow) 60%, var(--yellow-dark));
-  box-shadow: 0 30px 80px rgba(244, 201, 49, .25);
-  animation: floatWheel 12s ease-in-out infinite;
-}
-.wheel-2 {
-  width: 200px; height: 200px;
-  left: -60px;
-  bottom: 22%;
-  background: radial-gradient(circle at 40% 40%, var(--yellow-soft), var(--yellow) 60%, var(--yellow-dark));
-  opacity: .6;
-  animation: floatWheel 14s ease-in-out infinite reverse;
-}
-.wheel-3 {
-  width: 120px; height: 120px;
-  right: 12%;
-  bottom: 18%;
-  background: radial-gradient(circle at 40% 40%, #fff, var(--paper-2));
-  opacity: .5;
-  animation: floatWheel 10s ease-in-out infinite;
-}
-@keyframes floatWheel {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(20px, -30px) rotate(6deg); }
 }
 
 .hero-inner {
@@ -776,9 +756,67 @@ p.lead { font-family: var(--display); font-style: italic; font-weight: 300; font
 }
 
 /* ============================================================
-   REVIEWS
+   GALLERY (nouvelle section — vraies photos)
+   ============================================================ */
+.gallery { padding: 140px 0 120px; background: var(--paper); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 120px;
+  gap: 14px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.g {
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  transition: transform .6s var(--ease);
+  cursor: zoom-in;
+}
+.g:hover { transform: scale(1.02); }
+.g::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 65%, rgba(12, 12, 12, .3));
+  opacity: 0;
+  transition: opacity .4s var(--ease);
+}
+.g:hover::after { opacity: 1; }
+.g-1 { grid-column: 1 / 8; grid-row: span 4; }
+.g-2 { grid-column: 8 / 13; grid-row: span 4; }
+.g-3 { grid-column: 1 / 5; grid-row: span 3; }
+.g-4 { grid-column: 5 / 9; grid-row: span 3; }
+.g-5 { grid-column: 9 / 13; grid-row: span 3; }
+.g-6 { grid-column: 1 / 5; grid-row: span 3; }
+.g-7 { grid-column: 5 / 9; grid-row: span 3; }
+.g-8 { grid-column: 9 / 13; grid-row: span 3; }
+
+/* ============================================================
+   REVIEWS (simplifié, sans faux avis)
    ============================================================ */
 .reviews { padding: 140px 0 120px; background: var(--cream); }
+.reviews-cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+.btn-ghost-dark {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-ghost-dark:hover {
+  background: var(--ink);
+  color: var(--yellow);
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
 .reviews-hero { max-width: 1200px; margin: 0 auto; }
 .score-block { text-align: center; margin-bottom: 60px; }
 .score-big {
@@ -1048,9 +1086,13 @@ p.lead { font-family: var(--display); font-style: italic; font-weight: 300; font
    ============================================================ */
 @media (max-width: 1050px) {
   .intro-grid, .plateaux-grid, .contact-grid { grid-template-columns: 1fr; gap: 60px; }
-  .products-grid, .shop-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid, .shop-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .contact-map { aspect-ratio: 16/10; }
+  .gallery-grid { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 140px; }
+  .g-1 { grid-column: 1 / 7; grid-row: span 3; }
+  .g-2 { grid-column: 1 / 7; grid-row: span 2; }
+  .g-3, .g-4, .g-5, .g-6, .g-7, .g-8 { grid-column: span 3; grid-row: span 2; }
 }
 
 @media (max-width: 900px) {
@@ -1115,9 +1157,15 @@ p.lead { font-family: var(--display); font-style: italic; font-weight: 300; font
   .intro-badge { width: 100px; height: 100px; bottom: -20px; right: -12px; }
   .intro-badge .badge-num { font-size: 1.8rem; }
 
-  .products-grid, .shop-grid, .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+  .products-grid, .shop-grid { grid-template-columns: 1fr; gap: 16px; }
   .product-card { padding: 26px 22px 28px; }
   .product-illu { width: 70px; height: 70px; margin-bottom: 14px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; gap: 8px; }
+  .g-1 { grid-column: 1 / -1; grid-row: span 3; }
+  .g-2, .g-3, .g-4, .g-5, .g-6, .g-7, .g-8 { grid-column: span 1; grid-row: span 2; }
+  .logo-img { width: 40px; height: 40px; }
+  .reviews-cta { flex-direction: column; }
+  .reviews-cta .btn { width: 100%; }
 
   .plateaux-content .lead { font-size: 1.05rem; }
   .formule { grid-template-columns: 1fr auto; gap: 6px 16px; padding: 16px 0; }

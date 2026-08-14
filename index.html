@@ -18,16 +18,17 @@
 <header class="header">
   <div class="wrap header-inner">
     <a href="#top" class="logo">
-      <span class="logo-mark">C</span>
+      <img src="img/logo-croute.jpg" alt="Croûte" class="logo-img">
       <span class="logo-text">
         <span class="brand">Croûte</span>
-        <span class="sub">Fromagerie · Lacanau</span>
+        <span class="sub">Fromages &amp; miam miam · Lacanau</span>
       </span>
     </a>
     <nav class="nav">
-      <a href="#produits">Nos fromages</a>
-      <a href="#boutique">La boutique</a>
+      <a href="#produits">Fromages</a>
+      <a href="#boutique">Boutique</a>
       <a href="#plateaux">Plateaux</a>
+      <a href="#galerie">Galerie</a>
       <a href="#avis">Avis</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -42,6 +43,7 @@
     <li><a href="#produits">Nos fromages</a></li>
     <li><a href="#boutique">La boutique</a></li>
     <li><a href="#plateaux">Plateaux sur commande</a></li>
+    <li><a href="#galerie">Galerie</a></li>
     <li><a href="#avis">Avis</a></li>
     <li><a href="#contact">Contact &amp; horaires</a></li>
     <li><a href="https://www.instagram.com/fromageriecroute_lacanau/" target="_blank" rel="noopener" class="btn btn-yellow">Instagram</a></li>
@@ -50,10 +52,8 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <div class="wheel wheel-1"></div>
-  <div class="wheel wheel-2"></div>
-  <div class="wheel wheel-3"></div>
+  <div class="hero-bg" style="background-image: url('img/comptoir-croute.jpg');"></div>
+  <div class="hero-overlay"></div>
 
   <div class="hero-inner">
     <div class="hero-top">
@@ -62,13 +62,13 @@
 
     <h1 class="hero-title">
       <span class="l1">Croûte</span>
-      <span class="l2"><em>fromagerie</em> &amp; bien plus.</span>
+      <span class="l2">fromages &amp; <em>miam miam</em>.</span>
     </h1>
 
     <div class="hero-bottom">
-      <p class="hero-desc">Une sélection pointue de fromages fermiers, affinés avec soin, et tout ce qui va autour — vins, huiles, condiments, plateaux à emporter. Une adresse pour ceux qui aiment bien manger.</p>
+      <p class="hero-desc">Une sélection de fromages, de la charcuterie, une épicerie fine autour — vins, huiles, condiments, tartinades. La nouvelle fromagerie de Lacanau-Océan.</p>
       <div class="hero-ctas">
-        <a href="#produits" class="btn btn-yellow">Découvrir la sélection</a>
+        <a href="#produits" class="btn btn-yellow">Voir la sélection</a>
         <a href="#contact" class="btn btn-ghost">3 avenue Henri Seguin →</a>
       </div>
     </div>
@@ -95,7 +95,7 @@
   <div class="wrap">
     <div class="intro-grid">
       <div class="intro-media">
-        <div class="intro-photo" style="background-image: url('img/interieur.jpg');"></div>
+        <div class="intro-photo" style="background-image: url('img/fromager-comte.jpg');"></div>
         <div class="intro-badge">
           <div class="badge-num">01</div>
           <div class="badge-txt">Été<br>2026</div>
@@ -295,7 +295,7 @@
   <div class="wrap">
     <div class="plateaux-grid">
       <div class="plateaux-media">
-        <div class="plateaux-photo" style="background-image: url('img/plateau.jpg');"></div>
+        <div class="plateaux-photo" style="background-image: url('img/vitrine-fromages.jpg');"></div>
       </div>
       <div class="plateaux-content">
         <span class="eyebrow">Sur commande</span>
@@ -305,26 +305,47 @@
         <div class="plateaux-formules">
           <div class="formule">
             <div class="formule-name">Le petit</div>
-            <div class="formule-desc">4 fromages · 2-3 personnes</div>
-            <div class="formule-price">18 €</div>
+            <div class="formule-desc">Quelques fromages, apéro entre amis</div>
+            <div class="formule-price">sur devis</div>
           </div>
           <div class="formule">
             <div class="formule-name">Le grand</div>
-            <div class="formule-desc">6 fromages · 4-6 personnes</div>
-            <div class="formule-price">35 €</div>
+            <div class="formule-desc">Assortiment généreux, dîner ou repas</div>
+            <div class="formule-price">sur devis</div>
           </div>
           <div class="formule">
             <div class="formule-name">L'événement</div>
-            <div class="formule-desc">8+ fromages · à composer</div>
+            <div class="formule-desc">Plateau à composer pour vos occasions</div>
             <div class="formule-price">sur devis</div>
           </div>
         </div>
 
         <div class="plateaux-cta">
-          <a href="#contact" class="btn btn-yellow">Commander un plateau</a>
-          <span class="note">Commande 24h à l'avance conseillée</span>
+          <a href="#contact" class="btn btn-yellow">Passer en boutique</a>
+          <span class="note">Commande à l'avance conseillée</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE ============ -->
+<section class="gallery" id="galerie">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">La boutique en images</span>
+      <h2>Un <em class="italic">aperçu</em>.</h2>
+      <p>Un petit tour de la fromagerie, du comptoir aux étagères d'épicerie fine.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="g g-1" style="background-image: url('img/comptoir-croute.jpg');"></div>
+      <div class="g g-2" style="background-image: url('img/vitrine-fromages.jpg');"></div>
+      <div class="g g-3" style="background-image: url('img/fromager-comte.jpg');"></div>
+      <div class="g g-4" style="background-image: url('img/saucissons-paniers.jpg');"></div>
+      <div class="g g-5" style="background-image: url('img/epicerie-fine.jpg');"></div>
+      <div class="g g-6" style="background-image: url('img/fruits-secs-vendeuse.jpg');"></div>
+      <div class="g g-7" style="background-image: url('img/rayon-condiments.jpg');"></div>
+      <div class="g g-8" style="background-image: url('img/vitrine-vue-rue.jpg');"></div>
     </div>
   </div>
 </section>
@@ -333,43 +354,14 @@
 <section class="reviews" id="avis">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Ce qu'ils en disent</span>
-      <h2>Les <em class="italic">avis</em>.</h2>
-      <p>Ils sont passés, ils en parlent — on prend soin de chaque bonjour.</p>
+      <span class="eyebrow">Vos retours</span>
+      <h2>Ce qu'ils en <em class="italic">disent</em>.</h2>
+      <p>Vous êtes passés par Croûte ? On serait ravis d'avoir votre avis — laissez-en un sur Google, ça compte beaucoup pour une nouvelle adresse comme la nôtre.</p>
     </div>
 
-    <div class="reviews-hero">
-      <div class="score-block">
-        <div class="score-big">5<span class="score-max">/5</span></div>
-        <div class="score-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,10 17,15 18,22 12,18 6,22 7,15 2,10 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,10 17,15 18,22 12,18 6,22 7,15 2,10 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,10 17,15 18,22 12,18 6,22 7,15 2,10 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,10 17,15 18,22 12,18 6,22 7,15 2,10 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,10 17,15 18,22 12,18 6,22 7,15 2,10 9,9"/></svg>
-        </div>
-        <div class="score-count">Avis Google · <a href="https://www.google.com/search?q=Fromagerie+Cro%C3%BBte+Lacanau" target="_blank" rel="noopener">Lire tous les avis →</a></div>
-      </div>
-
-      <div class="reviews-grid">
-        <article class="review-card">
-          <div class="review-quote">"</div>
-          <p>Enfin une vraie fromagerie à Lacanau ! Choix impressionnant, conseils au top, ambiance chaleureuse. Le plateau qu'on a commandé pour l'apéro était parfait.</p>
-          <div class="review-author"><strong>Marie L.</strong><span>Août 2026</span></div>
-        </article>
-
-        <article class="review-card">
-          <div class="review-quote">"</div>
-          <p>Superbe boutique, sélection pointue, accueil aux petits soins. On y trouve aussi de très bons vins et de l'épicerie fine. À découvrir absolument.</p>
-          <div class="review-author"><strong>Julien P.</strong><span>Juillet 2026</span></div>
-        </article>
-
-        <article class="review-card">
-          <div class="review-quote">"</div>
-          <p>Une belle adresse qui manquait à Lacanau ! Les fromages sont goûteux, l'affinage soigné, et les conseils avisés. On reviendra !</p>
-          <div class="review-author"><strong>Camille R.</strong><span>Juillet 2026</span></div>
-        </article>
-      </div>
+    <div class="reviews-cta">
+      <a href="https://www.google.com/search?q=Fromagerie+Cro%C3%BBte+Lacanau" target="_blank" rel="noopener" class="btn btn-yellow">Voir &amp; laisser un avis Google</a>
+      <a href="https://www.instagram.com/fromageriecroute_lacanau/" target="_blank" rel="noopener" class="btn btn-ghost-dark">Suivre sur Instagram</a>
     </div>
   </div>
 </section>
@@ -408,16 +400,8 @@
           <div>
             <div class="contact-lbl">Horaires</div>
             <div class="contact-val">
-              <table class="hours">
-                <tr><td>Mardi</td><td>9h — 13h · 15h30 — 19h30</td></tr>
-                <tr><td>Mercredi</td><td>9h — 13h · 15h30 — 19h30</td></tr>
-                <tr><td>Jeudi</td><td>9h — 13h · 15h30 — 19h30</td></tr>
-                <tr><td>Vendredi</td><td>9h — 13h · 15h30 — 19h30</td></tr>
-                <tr><td>Samedi</td><td>9h — 19h30</td></tr>
-                <tr><td>Dimanche</td><td>9h — 13h</td></tr>
-                <tr class="closed"><td>Lundi</td><td>Fermé</td></tr>
-              </table>
-              <p class="hours-note">Horaires susceptibles d'évoluer selon la saison — vérifier sur Instagram.</p>
+              <p style="font-family: var(--sans); font-style: normal; font-size: .96rem; margin-bottom: 8px;">Horaires en cours de mise à jour.</p>
+              <p class="hours-note">Retrouvez les horaires à jour sur <a href="https://www.instagram.com/fromageriecroute_lacanau/" target="_blank" rel="noopener" style="border-bottom: 1px solid;">Instagram</a> ou sur la <a href="https://www.google.com/search?q=Fromagerie+Cro%C3%BBte+Lacanau" target="_blank" rel="noopener" style="border-bottom: 1px solid;">fiche Google</a>.</p>
             </div>
           </div>
         </div>
@@ -463,23 +447,23 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
-          <span class="logo-mark on-black">C</span>
+          <img src="img/logo-croute.jpg" alt="Croûte" class="logo-img">
           <span class="logo-text">
             <span class="brand on-black">Croûte</span>
-            <span class="sub">Fromagerie · Lacanau</span>
+            <span class="sub">Fromages &amp; miam miam · Lacanau</span>
           </span>
         </div>
-        <p class="brand-desc">Une vraie fromagerie à Lacanau — sélection pointue, plateaux sur commande, épicerie fine autour.</p>
+        <p class="brand-desc">La fromagerie de Lacanau-Océan — fromages, charcuterie, épicerie fine.</p>
       </div>
 
       <div class="footer-col">
         <h5>Le site</h5>
         <ul>
           <li><a href="#top">Accueil</a></li>
-          <li><a href="#produits">Nos fromages</a></li>
+          <li><a href="#produits">Fromages</a></li>
           <li><a href="#boutique">La boutique</a></li>
           <li><a href="#plateaux">Plateaux</a></li>
-          <li><a href="#avis">Avis</a></li>
+          <li><a href="#galerie">Galerie</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
