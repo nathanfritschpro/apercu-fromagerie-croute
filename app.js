@@ -99,6 +99,50 @@ if (y) y.textContent = new Date().getFullYear();
   update();
 })();
 
+// ============ Lightbox photos galerie ============
+(function initLightbox() {
+  const items = document.querySelectorAll('.g');
+  if (!items.length) return;
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = '<button class="lb-close" aria-label="Fermer">&times;</button><button class="lb-prev" aria-label="Précédent">‹</button><button class="lb-next" aria-label="Suivant">›</button><div class="lb-img"></div>';
+  document.body.appendChild(lb);
+  const imgEl = lb.querySelector('.lb-img');
+  const urls = Array.from(items).map(el => {
+    const bg = el.style.backgroundImage;
+    const m = bg.match(/url\(["']?([^"')]+)["']?\)/);
+    return m ? m[1] : '';
+  });
+  let idx = 0;
+  const show = i => {
+    idx = (i + urls.length) % urls.length;
+    imgEl.style.backgroundImage = `url("${urls[idx]}")`;
+  };
+  const open = i => {
+    show(i);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  const close = () => {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  items.forEach((el, i) => {
+    el.addEventListener('click', () => open(i));
+    el.style.cursor = 'zoom-in';
+  });
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+  lb.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+
 // Smooth scroll pour les ancres avec offset header
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
